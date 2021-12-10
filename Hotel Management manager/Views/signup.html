@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup</title>
+	<script type="text/javascript">
+    function validate(){
+    var name= document.forms["myForm"]["username"].value;
+    if (name == "") {
+   alert("Name must be filled out");
+   return false;
+   }
+
+  var password= document.forms["myForm"]["password"].value;
+  if (password == "") {
+			   alert("password must be filled out");
+			  return false;
+			}
+		   var email= document.forms["myForm"]["email"].value;
+		   if (email == "") {
+			   alert("Email must be filled out");
+			 return false;
+			}
+}
+ </script>
+	
+</head>
+<body>
+	<form name="myForm" action="../Controller/signupcheck.php" onsubmit="return validate()" method="post">
+		<fieldset>
+			<legend><h1><font face="Algerian" size="10" color="Green">Sign Up</font></h1></legend>
+			<table width="600" bordercolor="Green" border="2" cellspacing="8" cellpadding="6">
+				<tr>
+					
+					<td>Username:</td>
+					<td><input type="text" name="username"></td>
+					
+				</tr>
+				<tr>
+					
+					<td>Password:</td>
+					<td><input type="password" name="password"></td>
+					
+				</tr>
+				<tr>
+					
+					<td>Email:</td>
+					<td><input id="email" type="email" name="email"></td>
+					
+				</tr>
+				<tr>
+					
+					<td>Gender</td>
+					<td>
+						
+							<label><input type="radio" name="gender" value="male"> Male</label>
+							<label><input type="radio" name="gender" value="female"> Female</label>
+			
+					</td>
+				  </tr>
+				<tr>
+					<td>
+					
+					</td>
+					<td><input type="submit" name="submit" value="Submit"></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
