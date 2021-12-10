@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Login</title>
+	<script type="text/javascript">
+		function validate(){
+		var name= document.forms["myForm"]["username"].value;
+		if (name == "") {
+	   alert("Name must be filled out");
+	   return false;
+	   }
+	
+	  var password= document.forms["myForm"]["password"].value;
+	  if (password == "") {
+				   alert("password must be filled out");
+				  return false;
+				}
+	}
+	 </script>
+</head>
+<body>
+	<form name="myForm" action="../Controller/logincheck.php" onsubmit="return validate()" method="post">
+		<fieldset>
+			<legend><h1><font face="Algerian" size="10" color="Green">Log In</font></h1></legend>
+			<table width="600" bordercolor="Green" border="4" cellspacing="2" cellpadding="8">
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" name="username" ></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password" ></td>
+				</tr>
+				<tr>
+					<td>
+					
+					</td>
+					<td><input type="submit" name="submit" value="Submit"></td>
+				</tr>
+			</table>
+		</fieldset>
+		<html>
+			<a href="signup.html"><font face="Satisfy" size ="5" color="Black">Don't have account?</font> <font face="Satisfy" size ="5" color="Blue">Sign Up</font></a>
+	</form>
+</body>
+</html>
