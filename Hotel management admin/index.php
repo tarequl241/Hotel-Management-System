@@ -1,4 +1,5 @@
 <?php 
 
-	header('location: views/CoverPage.html');
+	header('location: views/login.html');
+//this is index
 ?>
