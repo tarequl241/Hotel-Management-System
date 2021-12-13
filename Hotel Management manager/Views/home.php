@@ -93,7 +93,9 @@ footer {
 	<br><li><a href="paymenthistory.php">Payment History</a></li><br>
 	<br><li><a href="UserInformation.php">User List </a></li><br>
 	<br><li><a href="AddReceptionist.php">Add Receptionist</a></li>
-	<li><a href="../HM/RemoveReceptionist.php">Remove</a></li><br>
+	<li><a href="RemoveReceptionist.php">Remove</a></li><br>
+  <br><li><a href="ShowDis.php">Show Discount Coupons</a></li><br>
+  <br><li><a href="searchDiscount.html">Search Discount</a></li>
 	
 
 

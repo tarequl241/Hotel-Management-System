@@ -2,50 +2,65 @@
 	require_once('../Model/usersModel.php');
 	$result = getAllUsers();
 	$count = mysqli_num_rows($result);
-
-	/*for($i=1; $i<=$count; $i++){
-		$data = mysqli_fetch_assoc($result);
-		print_r($data);
-		echo "<br>";
-	}*/
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<meta charset="utf-8">
 	<title>User List</title>
+	<style>
+
+		table,td,th
+		{
+			border :1px solid #ddd;
+			text-align:center;
+
+		}
+		table{
+			border-collapse: collapse;
+			width:100%
+			
+
+		}
+		th, td{
+			padding: 15px;
+		}
+		tr:hover{
+			background-color: Blue;
+		}
+
+	</style>
 </head>
 <body>
-
-	<center>
-		<a href="home.php">Back </a> |
-		<a href="../controller/logout.php">logout </a>
-	</center>
-
-	<table border="1" align="center">
-		<tr>
-			<th>ID</th>
-			<th>USERNAME</th>
-			<th>PASSWORD</th>
-			<th>EMAIL</th>
-			<th>ACTION</th>
-		</tr>
-
+<table  >
+     
+	 <tr bgcolor="Green" >
+		<th ><font face="Lucida Sans Unicode" size="5" color="Black"> ID</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black"> User Name</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black"> Password</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">Email</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black"> Action</font></th>
+	</tr>
 	<?php while($data = mysqli_fetch_assoc($result)) { ?>
-		<tr>
-			<td><?=$data['id']?></td>
-			<td><?=$data['username']?></td>
-			<td><?=$data['password']?></td>
-			<td><?=$data['email']?></td>
-			<td>
-				<a href="edit.php?id=<?=$data['id']?>"> EDIT </a> |
-				<a href="delete.php?id=1"> DELETE</a>
+				<tr>
+					<td><?=$data['id']?></td>
+					<td><?=$data['username']?></td>
+					<td><?=$data['password']?></td>
+					<td><?=$data['email']?></td>
+					<td>
+			<a href="edit.php?id=<?=$data['id']?>"> EDIT </a> 
+			
 			</td>
 		</tr>
+		<?php } ?>
 
-	<?php } ?>
+	
 	</table>
 </body>
 </html>
+<center>
+		<a href="home.php">Back </a> |
+		<a href="../Controller/logout.php">logout </a>
+	</center>

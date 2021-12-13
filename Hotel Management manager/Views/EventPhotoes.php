@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+	if(isset($_COOKIE['flag'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,3 +17,8 @@
     </P>
 </body>
 </html>
+<?php
+	}else{
+		header('location: login.html');
+	}
+?>

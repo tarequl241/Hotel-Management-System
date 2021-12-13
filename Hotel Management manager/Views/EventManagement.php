@@ -64,7 +64,7 @@ article {
   </nav>
   <article>
     <h1>Past Events</h1>
-    <p><a href="EventPhotoes.html">Check Here For Event Photoes </a><br>
+    <p><a href="EventPhotoes.php">Check Here For Event Photoes </a><br>
     We have organized many events before. We have 3 ball rooms which provides accomodation of 150-170 people each. 
         We have organized Iftar Part,Eid Party, Diwali Party, Durga puja this year.    </p>
 

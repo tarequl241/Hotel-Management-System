@@ -37,9 +37,52 @@
 			return false;
 		}
 	}
+
+	function addDis($user)
+    {
+        $con = getConnection();
+		$sql = "insert into discount values('','{$user['name']}','{$user['amount']}')";
+		if( mysqli_query($con, $sql)){
+            return true;
+		}else{
+			return false;
+		}
+	}
+	function addRes($user){
+
+        $con = getConnection();
+
+        $sql = "insert into receptionist values('', '{$user['fname']}','{$user['lname']}', '{$user['age']}','{$user['experience']}','{$user['type']}','{$user['marriage']}','{$user['comments']}','{$user['mobile']}')";
+       if(mysqli_query($con, $sql)){
+
+            return true;
+
+        }else{
+
+            return false;
+
+        }
+
+    }
+	
+
 	function getAllUserstour_guide(){
 		$con = getConnection();
 		$sql = "select * from tour_guide";
+		$result = mysqli_query($con, $sql);
+		return $result;
+	}	
+
+	function getAllDis(){
+		$con = getConnection();
+		$sql = "select * from discount";
+		$result = mysqli_query($con, $sql);
+		return $result;
+	}	
+
+	function getAllpayment(){
+		$con = getConnection();
+		$sql = "select * from payment";
 		$result = mysqli_query($con, $sql);
 		return $result;
 	}	
@@ -56,6 +99,18 @@
 		$result = mysqli_query($con, $sql);
 		return $result;
 	}	
+	function getphoto(){
+		$con = getConnection();
+		$sql = "select * from wedding";
+		$result = mysqli_query($con, $sql);
+		return $result;
+	}
+	function getr1menu(){
+		$con = getConnection();
+		$sql = "select * from r1";
+		$result = mysqli_query($con, $sql);
+		return $result;
+	}
 
 	function getAllBookedRoom(){
 		$con = getConnection();
@@ -79,11 +134,27 @@
 		$data = mysqli_fetch_assoc($result); 
 		return $data;
 	}
+	function getpayment($id){
+		$con = getConnection();
+		$sql = "select * from payment where id={$id}";
+		$result = mysqli_query($con, $sql);
+		$data = mysqli_fetch_assoc($result); 
+		return $data;
+	}
 	
 
 	function editUser($user){
 		$con = getConnection();
 		$sql = "update log_in set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	function editpayment($user){
+		$con = getConnection();
+		$sql = "update payment set paid='{$user['paid']}' where id={$user['id']}";
 		if(mysqli_query($con, $sql)){
 			return true;
 		}else{

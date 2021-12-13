@@ -1,67 +1,42 @@
-<?php 
-	session_start();
-	if(isset($_COOKIE['flag'])){
-?>
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<title>Home Page</title>
-	<meta charset="utf-8">
-	<meta name="viewport"
-	content="width=device-width, initial-scale=1">
-    <style>
-* {
-  box-sizing: border-box;
-}
-
-body{
-	font-family: Arial, Helvetica, sans-serif;
-}
-header {
-  background-color: Green;
-  padding: 10px;
-  text-align: center;
-  font-size: 15px;
-  color: White;
-}
-footer {
-  background-color: green;
-  padding: 1px;
-  text-align: center;
-  color: white;
-}
-article {
-  float: center;
-  padding: 10px;
-  width: 100%;
-  background-color: DarkCyan;
-  height: 500px;} 
-  section::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-@media (max-width: 600px) {
-   article {
-    width: 100%;
-    height: auto;
-  }
-}
-</style>
+	<title>discount</title>
 </head>
-</body>
-<header>
-	<h1><p style="text-align:center;"><font face= "Courier" size="10">Discount Codes</font></p></h1>
-</header>
-<article>
-    <h2><a href="regularcustomer.html">Dicount For Regular Customers</a></h2>
-    <h2>Dicount For Eid</h2>
-</article>
-    
+<body>
+	<form method="post" action="../Controller/discheck.php">
+		<fieldset>
+			
+			<table  width="100%" height="100%" border="0" cellpadding="5"
+			background="../image/d1.jpg">
+			<tr>
+				<td align="center">
+					<legend><h1><font face="American Captain" size="10" color="Purple">Create Discount Coupon</font></h1></legend>
+			<table width="60%" bordercolor="Green" border="4" cellspacing="4" cellpadding="6">
+				<tr>
+					<td>Name:</td>
+                   
+					<td><input type="text" name="name" value=""></td>
+				</tr>
+                <tr>
+					<td>Discount amount</td>
+                   
+					<td><input type="text" name="amount" value=""></td>
+				</tr>
+				<tr>
+					<td>
+					Please press Submit 
+					</td>
+					<td><input type="submit" name="submit" value="Submit"></td>
+				</tr>
 
-<?php
-	}else{
-		header('location: login.html');
-	}
-?>
+			</table>
+            <center>
+                <br><br>
+						<a href="home.php"><font face="Satisfy" size ="5" color="Black">Back</font> </a>&nbsp;  
+		
+						</center>
+		</fieldset>
+		
+	</form>
+</body>
+</html>

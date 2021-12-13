@@ -1,6 +1,6 @@
 <?php 
 	require_once('../Model/usersModel.php');
-	$result = getAllRoomBalcony();
+	$result = getphoto();
 	$count = mysqli_num_rows($result);
 ?>
 
@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>roomWithBalcony</title>
+	<title>Room Details</title>
 	<style>
 
 		table,td,th
@@ -29,23 +29,24 @@
 		tr:hover{
 			background-color: Blue;
 		}
-</style>
+
+	</style>
 </head>
 <body>
-<<table  >
+<table  >
      
 	 <tr bgcolor="Green" >
 		<th ><font face="Lucida Sans Unicode" size="5" color="Black"> ID</font></th>
-		<th><font face="Lucida Sans Unicode" size="5" color="Black"> Room Details</font></th>
-		<th><font face="Lucida Sans Unicode" size="5" color="Black">No. Of Bed</font></th>
-		<th><font face="Lucida Sans Unicode" size="5" color="Black">Date of availability</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">People Count</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">Details</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">Charge Details</font></th>
 	</tr>
 	<?php while($data = mysqli_fetch_assoc($result)) { ?>
 		<tr>
 			<td><?=$data['id']?></td>
-			<td><?=$data['Room_det']?></td>
-			<td><?=$data['noof_bed']?></td>
-			<td><?=$data['Date_available']?></td>
+			<td><?=$data['people_count']?></td>
+			<td><?=$data['space']?></td>
+			<td><?=$data['amount']?></td>
 		</tr>
 
 	<?php } ?>

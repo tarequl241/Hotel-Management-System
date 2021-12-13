@@ -2,34 +2,45 @@
 	require_once('../Model/usersModel.php');
 	$result = getAllRoom();
 	$count = mysqli_num_rows($result);
-
-	/*for($i=1; $i<=$count; $i++){
-		$data = mysqli_fetch_assoc($result);
-		print_r($data);
-		echo "<br>";
-	}*/
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>User List</title>
+	<title>Room Details</title>
+	<style>
+
+		table,td,th
+		{
+			border :1px solid #ddd;
+			text-align:center;
+
+		}
+		table{
+			border-collapse: collapse;
+			width:100%
+			
+
+		}
+		th, td{
+			padding: 15px;
+		}
+		tr:hover{
+			background-color: Blue;
+		}
+
+	</style>
 </head>
 <body>
-
-	
-
-	<table border="1" align="center">
-		<tr>
-			<th>ID</th>
-			<th>Details of room</th>
-			<th>Number of Beds</th>
-			<th>Available on Date</th>
-			
-		</tr>
-
+<table  >
+     
+	 <tr bgcolor="Green" >
+		<th ><font face="Lucida Sans Unicode" size="5" color="Black"> ID</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black"> Room Details</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">No. Of Bed</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">Date of availability</font></th>
+	</tr>
 	<?php while($data = mysqli_fetch_assoc($result)) { ?>
 		<tr>
 			<td><?=$data['id']?></td>

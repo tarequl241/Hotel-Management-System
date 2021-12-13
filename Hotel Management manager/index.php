@@ -1,4 +1,4 @@
 <?php 
 
-	header('location: views/login.html');
+	header('location: Views/coverpage.html');
 ?>

@@ -1,24 +1,45 @@
 <?php 
-	//session_start();
-	//if(isset($_COOKIE['flag'])){
     require_once('../Model/usersModel.php');
 	$result = getAllUserstour_guide();
 	$count = mysqli_num_rows($result);
-
-	/*for($i=1; $i<=$count; $i++){
-		$data = mysqli_fetch_assoc($result);
-		print_r($data);
-		echo "<br>";
-	}*/
 ?>
-<table border="1" align="center">
-		<tr>
-			<th>ID</th>
-			<th>USERNAME</th>
-			<th>experience</th>
-			<th>coastal_area</th>
-			<th>PHONE</th>
-		</tr>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>roomWithBalcony</title>
+	<style>
+
+		table,td,th
+		{
+			border :1px solid #ddd;
+			text-align:center;
+
+		}
+		table{
+			border-collapse: collapse;
+			width:100%
+			
+
+		}
+		th, td{
+			padding: 15px;
+		}
+		tr:hover{
+			background-color: Blue;
+		}
+</style>
+</head>
+<body>
+<table  >
+     
+	 <tr bgcolor="Green" >
+		<th ><font face="Lucida Sans Unicode" size="5" color="Black"> ID</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">Name</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">Year of experience</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">Coastal Area</font></th>
+		<th><font face="Lucida Sans Unicode" size="5" color="Black">Phone</font></th>
+	</tr>
 <?php while($data = mysqli_fetch_assoc($result)) { ?>
 		<tr>
 			<td><?=$data['id']?></td>

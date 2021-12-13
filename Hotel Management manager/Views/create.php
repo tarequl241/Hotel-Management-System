@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Create New User Page</title>
+	<title>Create New</title>
 	<script type="text/javascript">
     function validate(){
     var name= document.forms["myForm"]["username"].value;
@@ -21,45 +22,49 @@
 			}
 }
  </script>
+	<link rel="stylesheet" href="signup.css">
 </head>
 <body>
-	
-<form name="myForm" action="../Controller/signupcheck.php" onsubmit="return validate()" method="post">
-		<fieldset>
-			<legend><h1><font face="Algerian" size="10" color="green">Create New</font></h1></legend>
-			<table width="600" bordercolor="green" border="4" cellspacing="4" cellpadding="6">
-				<tr>
-					<td>Username:</td>
-					<td><input type="text" name="username" ></td>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td><input type="password" name="password" ></td>
-				</tr>
-				<tr>
-					<td>Email:</td>
-					<td><input type="email" name="email"></td>
-				</tr>
-				<tr>
-					<td>Emplyment Status</td>
-					<td>
-					  <input type="radio" name="estatus" value="employed" />Employed
-					  <input type="radio" name="estatus" value="Unemployed" />Unemployed
-					</td>
-				  </tr>
-				<tr>
-					<td>
-						Please press Submit 
-					</td>
-					<td><input type="submit" name="submit" value="Submit"></td>
-				</tr>
-			</table>
-		</fieldset>
-	</form>
-	<center>
-		<a href="home.php"><font face="Satisfy" size ="5" color="Black">Back</font> </a>&nbsp;  || 
-		<a href="logout.php"><font face="Satisfy" size ="5" color="Black">&nbsp; Log Out</font> </a>
-	</center>
-	
+	<div class="wrapper">
+	<div class="title">
+	   Create New
+	</div>
+	<form name="myForm" action="../Controller/signupcheck.php" onsubmit="return validate()" method="post">
+		<div class="field">
+			<p><font color="Purple">&nbsp;&nbsp;&nbsp;User Name</font></p>
+		<label></label>
+			<input type="text" name="username">
+		</div>
+		<div class="field">
+			<p><font color="Purple"><br>&nbsp;&nbsp;&nbsp;Password</font></p>
+			<label></label>
+			<input type="password" name="password" >
+		</div>
+		<br>
+		<div class="field">
+			
+			<p><font color="Purple"><br>&nbsp;&nbsp;&nbsp;Email</font></p>
+			<label></label>
+			<input type="email" name="email" >
+		</div>
+			<div class="field">
+				<br>
+				<br>
+				<br>
+				<input type="submit" name="submit" value="Submit" style="position:relative; top:25px; left: 0%;">
+				
+				<br><br><br>
+				<center>
+				<a href="login.html">Log in</a>
+			</center>
+			
+			</div>
+			<br>
+			<br>
+			<br><br><br>
+			
+</form>
+</div>
 </body>
+
 </html>
