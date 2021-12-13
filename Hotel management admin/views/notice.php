@@ -1,47 +1,63 @@
+<?php 
+	require_once('../model/usersModel.php');
+	$result = getAllNotice();
+	$count = mysqli_num_rows($result);
+?>
+<!DOCTYPE html>
 <html>
 <head>
+	
 	<title>Notice</title>
+	<style>
+
+		table,td,th
+		{
+			border :1px solid #ddd;
+			text-align:center;
+
+		}
+		table{
+			border-collapse: collapse;
+            
+			width:60%
+			
+
+		}
+		th, td{
+			padding: 15px;
+		}
+		tr:hover{
+			background-color: lightgreen;
+		}
+
+	</style>
 </head>
 <body>
+
+
+<table  align="center">
+     
+     	<tr bgcolor="Orange" >
+			<th ><font face="Lucida Sans Unicode" size="5" color="Black"> ID</font></th>
+			<th><font face="Lucida Sans Unicode" size="5" color="Black">Notice</font></th>
 			
-			<table  width="100%" height="50%" border="0" cellpadding="5"
-			bgcolor="Orange">
-			<tr>
-				<td align="center" VALIGN="TOP">
-					<legend><h1><font face="American Captain" size="10" color="Purple">Notice</font></h1></legend>
-                </td> 
-            </tr>
-            
-                <tr>
-                    <td align="center" valign="top">
-                         <table width="600" height="150" border="0" cellspacing="1" cellpadding="1">
-                             <tr>
-                                 <td align="center"><img src="../image/cristmas.jpg" width="600" height="400"/></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table width="100%" height="150" border="0" cellspacing="1" cellpadding="1">
-                <tr>
-                    <td height="72" align="center" valign="top"> 
-                        <table width="100%" border="0" cellspacing="1" cellpadding="1">
-                            <tr>
-                                <td width="100%" align="center"><font face="Satisfy" color="black" size="6">Dear Guest,<br/>
-                                May the peace and joy of the holiday season be with you throughout the coming year.<br/>
-                                Merry Christmas and Happy New year!<br/>
-                                Best Regards,
-                                Hotel Green View<br/>
-                                </font></td>
-                            </tr>
-                        </table>
-                    </td>
+		</tr>
+		
+     
 
-                </tr>
-            <table>
+			<?php while($data = mysqli_fetch_assoc($result)) { ?>
+				<tr>
+					<td><?=$data['id']?></td>
+					<td><?=$data['notice']?></td>
 
-        </table>
-        <center>
-		<a href="home.php"><font face="Satisfy" size ="5" color="Blue">Back</font> </a>&nbsp;
-    </center>
+		</tr>
+		
+
+	<?php } ?>
+	</table>
+    <center>
+						<a href="home.php"><font face="Satisfy" size ="5" color="Black">Back</font> </a>&nbsp;  || 
+		<a href="logout.php"><font face="Satisfy" size ="5" color="Black">&nbsp; Log Out</font> </a>
+						</center>
 </body>
 </html>

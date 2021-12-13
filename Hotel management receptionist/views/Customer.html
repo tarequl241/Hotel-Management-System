@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body background="../model/white.jpg">
+
+<h1>Search Customer By Id </h1>
+
+<label for="searchKey">ID:</label>
+<input type="number" name="searchKey" id="searchKey">
+
+<button id="search" onclick="search()">Search</button>
+<button onclick="history.go(-1);">Back </button>
+ <p id="p2"></p>
+
+ <script>
+
+ function search() {
+var searchKey = document.getElementById("searchKey").value;
+
+ 
+
+ var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if(this.readyState == 4 && this.status == 200) {
+document.getElementById("p2").innerHTML = xhttp.responseText;
+}
+}
+
+ 
+
+ xhttp.open("GET", "../controller/Customer.php?searchKey=" + searchKey, true);
+xhttp.send();
+}
+
+ 
+
+ </script>
+
+
+
+</body>
+</html>

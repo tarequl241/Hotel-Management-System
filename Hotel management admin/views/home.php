@@ -15,12 +15,13 @@
 			<td align="center">
 			<table width="50%" border="0" align="center" cellpadding="1"
 				cellspacing="1">
-				<td align="left"><font face="Lucida Sans Unicode" color="White"><a href="create.php"><b><p style="font-size:18px">Create account</p></b></a> </font></td>
+				<td align="left"><font face="Lucida Sans Unicode" color="White"><a href="aboutus.php"><b><p style="font-size:18px">About Us</p></b></a> </font></td>
 
-				<td align="left"><font face="Lucida Sans Unicode" color="White"><a href="contact.html"><b><p style="font-size:18px">Contact Us</p></b></a> </font></td>
+				<td align="center"><font face="Lucida Sans Unicode" color="White"><a href="contact.php"><b><p style="font-size:18px">Contact Us</p></b></a> </font></td>
 
 				
-				<td align="left"><font face="Lucida Sans Unicode" color="White"><a href="../controller/logout.php"><b><p style="font-size:18px">Log out</p></b></a> </font></td>
+				<td align="center"><font face="Lucida Sans Unicode" color="White"><a href="../views/search.html"><b><p style="font-size:18px">Search</p></b></a> </font></td>
+				<td align="right"><font face="Lucida Sans Unicode" color="White"><a href="../controller/logout.php"><b><p style="font-size:18px">Log out</p></b></a> </font></td>
 			</table>
 
 
@@ -41,9 +42,10 @@
 						<br/>
 						<a href="notice.php">Notice</a>
 						<br/>
-						<a href="jobcircular.php">Job Circular</a>
+						<a href="addnotice.php">addnotice</a>
 						<br/>
-						<a href="ratings.php">Ratings</a>
+						
+						<a href="jobcircular.php">Job Circular</a>
 						
 
 
@@ -58,9 +60,12 @@
 						<br/>
 						<a href="financereport.php">Finance and Report</a>
 						<br/>
-						<a href="approval.php">Approval</a>
+						<!-- <a href="approval.php">Approval</a>
+						<br/> -->
+						
+						<a href="ratings.php">Ratings</a>
 						<br/>
-						<a href="managerrequest.php">Request varify</a>
+						<a href="addrating.php">Add Ratings</a>
 						</font></td>	
 
 
@@ -80,7 +85,7 @@
                     <td height="72" align="center" valign="top"> 
                         <table width="100%" border="0" cellspacing="1" cellpadding="1"background="../image/new.jpg">
                             <tr>
-                                <td width="100%" align="center"><font face="Lucida Sans Unicode" color="black" size="4">About Us<br/>
+                                <td width="100%" align="center"><font face="Lucida Sans Unicode" color="black" size="4">Book your rooms now <br/>
                                 We are Hotel Green View , one of the most iconic hotels in Chittagong. We have several facilities such as Spa, Swiming pool, well quiped gym <br/>
                                 Specias ball room,luxurious dining area, bilingual receptionist and many more !<br/>
                                 You are most welcome<br/>
