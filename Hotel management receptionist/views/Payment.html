@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body background="../model/white.jpg">
+
+<font size="4" color="White">
+    <center>
+ <h1>PAYMENT HISTORY</h1>
+
+<br>
+<br>
+<label for="UserName">UserName:</label>
+<input type="text" name="UserName" id="UserName">
+<br>
+<br>
+<label for="BedType">BedType:</label>
+<input type="text" name="BedType" id="BedType">
+<br>
+<br>
+<label for="PaymentType">PaymentType:</label>
+<input type="text" name="PaymentType" id="PaymentType">
+<br>
+<br>
+<label for="Amount">Amount:</label>
+<input type="text" name="Amount" id="Amount">
+
+ <br><br>
+
+ <button id="submit" onclick="submit()">Submit</button>
+
+ <p id="p1"></p>
+
+ <br>
+<hr>
+
+</body>
+
+
+
+<body>
+
+ <h1>SEARCH  </h1>
+
+ <label for="searchKey">id:</label>
+<input type="number" name="searchKey" id="searchKey">
+<br>
+<br>
+ <button id="search" onclick="search()">Search</button>
+<button onclick="history.go(-1);">Back </button>
+ <p id="p2"></p>
+
+</font>
+</center>
+
+ <script>
+function submit() {
+
+ var UserName = document.getElementById("UserName").value;
+ var BedType = document.getElementById("BedType").value;
+ var PaymentType = document.getElementById("PaymentType").value;
+ var Amount = document.getElementById("Amount").value;
+if(UserName == "" || BedType == "" || PaymentType == "" || Amount == "") {
+document.getElementById("p1").innerHTML = "Fill up the form properly";
+document.getElementById("p1").style.color = "red";
+}
+
+ else {
+
+ var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if(this.readyState == 4 && this.status == 200) {
+document.getElementById("p1").innerHTML = xhttp.responseText;
+document.getElementById("p1").style.color = "green";
+}
+}
+
+ xhttp.open("POST", "../controller/Payment.php", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("UserName="+UserName + "&BedType="+BedType + "&PaymentType="+PaymentType+"&Amount="+Amount);
+}
+}
+
+ function search() {
+var searchKey = document.getElementById("searchKey").value;
+
+ var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if(this.readyState == 4 && this.status == 200) {
+document.getElementById("p2").innerHTML = xhttp.responseText;
+}
+}
+
+ xhttp.open("GET", "../controller/Payment.php?searchKey=" + searchKey, true);
+xhttp.send();
+}
+
+ </script>
+
+</body>
+</html>

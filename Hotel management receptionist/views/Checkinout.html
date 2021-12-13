@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkinout</title>
+</head>
+<body background="../model/white.jpg">
+<center>
+<label for="UserId">UserId</label>
+<input type="text" name="UserId" id="UserId">
+<br><br>
+<label for="Name">Name:</label>
+<input type="text" name="Name" id="Name">
+<br><br>
+<label for="PhoneNumber">PhoneNumber</label>
+<input type="text" name="PhoneNumber" id="PhoneNumber">
+<br><br>
+<label for="CheckIn">CheckIn</label>
+<input type="text" name="CheckIn" id="CheckIn">
+<br><br>
+<label for="CheckOut">CheckOut</label>
+<input type="text" name="CheckOut" id="CheckOut">
+
+<br><br>
+
+ <button id="submit" onclick="submit()">Submit</button>
+
+<p id="p1"></p>
+
+<br>
+<hr>
+<br>
+</body>
+
+<body>
+
+ <h1>Search By Id </h1>
+
+<label for="searchKey">ID:</label>
+<input type="number" name="searchKey" id="searchKey">
+
+ <button id="search" onclick="search()">Search</button>
+<br><br>
+<button onclick="history.go(-1);">Back </button>
+<p id="p2"></p>
+</center>
+ 
+
+ <script>
+function submit() {
+
+ 
+
+ var UserId = document.getElementById("UserId").value;
+ var Name = document.getElementById("Name").value;
+ var PhoneNumber = document.getElementById("PhoneNumber").value;
+ var CheckIn = document.getElementById("CheckIn").value;
+ var CheckOut = document.getElementById("CheckOut").value;
+
+if(UserId == "" || Name == "" || PhoneNumber == "" || CheckIn == "" ||CheckOut == "") {
+document.getElementById("p1").innerHTML = "Fill up the form properly";
+document.getElementById("p1").style.color = "red";
+}
+
+ 
+
+ else {
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if(this.readyState == 4 && this.status == 200) {
+document.getElementById("p1").innerHTML = xhttp.responseText;
+document.getElementById("p1").style.color = "green";
+}
+}
+
+xhttp.open("POST", "../controller/CheckInOut.php", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("UserId="+UserId+"&Name="+Name+"&PhoneNumber="+PhoneNumber+"&CheckIn="+CheckIn+"&CheckOut="+CheckOut);
+}
+}
+
+ 
+
+ function search() {
+var searchKey = document.getElementById("searchKey").value;
+
+ 
+
+ var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if(this.readyState == 4 && this.status == 200) {
+document.getElementById("p2").innerHTML = xhttp.responseText;
+}
+}
+
+ 
+
+ xhttp.open("GET", "../controller/CheckInOut.php?searchKey=" + searchKey, true);
+xhttp.send();
+}
+
+ 
+
+ </script>
+
+ 
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
