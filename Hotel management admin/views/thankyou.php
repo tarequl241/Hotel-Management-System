@@ -1,13 +1,13 @@
 <?php 
 	require_once('../model/usersModel.php');
-	$result = getAllNotice();
+	$result = getAllInfo();
 	$count = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	
-	<title>Notice</title>
+	<title>Message</title>
 	<style>
 
 		table,td,th
@@ -27,7 +27,7 @@
 			padding: 15px;
 		}
 		tr:hover{
-			background-color: lightgreen;
+			background-color: lightskyblue;
 		}
 
 	</style>
@@ -38,8 +38,10 @@
 <table  align="center">
      
      	<tr bgcolor="Orange" >
-			<th ><font face="Lucida Sans Unicode" size="5" color="Black"> ID</font></th>
-			<th><font face="Lucida Sans Unicode" size="5" color="Black">Notice</font></th>
+			<th ><font face="Lucida Sans Unicode" size="5" color="Black"> Serial</font></th>
+			<th><font face="Lucida Sans Unicode" size="5" color="Black">Name</font></th>
+            <th ><font face="Lucida Sans Unicode" size="5" color="Black">Mobile</font></th>
+			<th><font face="Lucida Sans Unicode" size="5" color="Black">Message</font></th>
 			
 		</tr>
 		
@@ -48,7 +50,9 @@
 			<?php while($data = mysqli_fetch_assoc($result)) { ?>
 				<tr>
 					<td><?=$data['id']?></td>
-					<td><?=$data['notice']?></td>
+					<td><?=$data['name']?></td>
+                    <td><?=$data['mobile']?></td>
+					<td><?=$data['message']?></td>
 
 		</tr>
 		

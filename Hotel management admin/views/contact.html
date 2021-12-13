@@ -4,7 +4,7 @@
 	<title>Contact Us</title>
 </head>
 <body>
-    <form method="post" action="../views/mail.php">
+    <form method="post" action="../controller/infocheck.php">
 		<fieldset>
 			
 			<table  width="100%" height="100%" border="0" cellpadding="5"
@@ -15,7 +15,7 @@
 			<table width="400" bordercolor="Orange" border="4" cellspacing="4" cellpadding="6">
 				<tr>
 					<td>Name:</td>
-					<td><input type="text" name="name" placeholder="Your name"></td>
+					<td><input type="text" name="name" value="<?=$user['name']?>"></td>
 				</tr>
 				<tr>
 					<td>Email:</td>

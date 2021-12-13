@@ -1,31 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Finance and report</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document</title>
 </head>
 <body>
-			
-			<table  width="100%" height="100%" border="0" cellpadding="5"
-			bgcolor="Orange">
-			<tr>
-				<td align="center" VALIGN="TOP">
-					<legend><h1><font face="American Captain" size="10" color="Purple">Finance and Report</font></h1></legend>
-                </td> 
-            </tr>
-            
-                <tr>
-                    <td align="center" valign="top">
-                         <table width="600" height="150" border="0" cellspacing="1" cellpadding="1">
-                             <tr>
-                                 <td align="center"><img src="../image/chart.png" width="600" height="400"/></td><br/>
-                                 <br/><td align="center"><img src="../image/profit.jpg" width="600" height="400"/></td>
-                            </tr>
-                            
-                        </table>
-                    </td>
-                </tr>
-            </table>
-            <center>
-		<a href="home.php"><font face="Satisfy" size ="5" color="Blue">Back</font> </a>&nbsp;
-    </center>
+
+
+<center>
+						<a href="home.php"><font face="Satisfy" size ="5" color="Black">Back</font> </a>&nbsp;  || 
+		<a href="logout.php"><font face="Satisfy" size ="5" color="Black">&nbsp; Log Out</font> </a>
+						</center>
 </body>
 </html>
