@@ -15,31 +15,41 @@
 				  return false;
 				}
 	}
-	 </script>
+</script>
+	 <link rel="stylesheet" href="login.css">
 </head>
 <body>
-	<form name="myForm" action="../Controller/logincheck.php" onsubmit="return validate()" method="post">
-		<fieldset>
-			<legend><h1><font face="Algerian" size="10" color="Green">Log In</font></h1></legend>
-			<table width="600" bordercolor="Green" border="4" cellspacing="2" cellpadding="8">
-				<tr>
-					<td>Username:</td>
-					<td><input type="text" name="username" ></td>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td><input type="password" name="password" ></td>
-				</tr>
-				<tr>
-					<td>
-					
-					</td>
-					<td><input type="submit" name="submit" value="Submit"></td>
-				</tr>
-			</table>
-		</fieldset>
-		<html>
-			<a href="signup.html"><font face="Satisfy" size ="5" color="Black">Don't have account?</font> <font face="Satisfy" size ="5" color="Blue">Sign Up</font></a>
+	<div class="wrapper">
+		<div class="title">
+		   Login
+		</div>
+	
+<form name="myForm" action="../Controller/logincheck.php" onsubmit="return validate()" method="post">
+		
+				<div class="field">
+					<p><font color="Purple">&nbsp;&nbsp;&nbsp;User Name</font></p>
+				<label></label>
+					<input type="text" name="username">
+				</div>
+				<div class="field">
+					<p><font color="Purple"><br>&nbsp;&nbsp;&nbsp;Password</font></p>
+					<label></label>
+					<input type="password" name="password" >
+				</div>
+				
+				<div class="field">
+					<br>
+					<br>
+					<input type="submit" name="submit" value="Submit" style="position:relative; top:25px; left: 0%;">
+				</div>
+				<br>
+				<br>
+				<br>
+				<div class="signup-link">
+					Not a member? <a href="signup.html">Sign Up</a>
+				</div>
+				<br>
 	</form>
+</div>
 </body>
 </html>
